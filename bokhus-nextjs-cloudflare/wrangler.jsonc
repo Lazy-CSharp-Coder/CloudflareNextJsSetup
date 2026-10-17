@@ -1,0 +1,39 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "bokhus-nextjs",
+  "main": ".open-next/worker.js",
+  "upload_source_maps": true,
+  // Must be 2024-09-23 or later. Using today's date.
+  "compatibility_date": "2026-10-17",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  // KV namespace for Next.js cache (ISR, tag cache, "use cache", unstable_cache).
+  // OpenNext detects this binding automatically — no cache config needed in open-next.config.ts.
+  // Replace the id with the real one from: npx wrangler kv namespace create NEXT_CACHE_WORKERS_KV
+  "kv_namespaces": [
+    {
+      "binding": "NEXT_CACHE_WORKERS_KV",
+      "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+    }
+  ],
+  // Non-secret env vars — available at build time and runtime.
+  // Only include vars that your code (or libraries like Clerk) reads from process.env.
+  // If a value is hardcoded directly in your source files, it does NOT need to be here.
+  "vars": {
+    // Clerk reads these from process.env internally — must be present at build time
+    "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "pk_test_your-clerk-publishable-key",
+    "NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL": "/Register"
+    // NOTE: NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET are NOT here
+    // because they are hardcoded directly in your sanity/client.ts file.
+    // NOTE: reCAPTCHA site key is NOT here — if hardcoded in your component, it's not needed.
+    // If you read it from process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, add it here.
+  }
+}

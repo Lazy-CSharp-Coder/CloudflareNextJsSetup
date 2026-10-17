@@ -1,0 +1,55 @@
+{
+  "name": "bokhus-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint .",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^7.5.20",
+    "@hookform/resolvers": "^5.4.0",
+    "@sanity/client": "^7.23.1",
+    "@sanity/image-url": "^2.1.1",
+    "clerk": "^2.1.0",
+    "convert-number-to-words": "^1.0.3",
+    "next": "^16.3.4",
+    "next-sanity": "^13.3.4",
+    "numbers-to-words": "^2.0.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.2.8",
+    "react-google-recaptcha": "^3.1.0",
+    "react-hook-form": "^7.80.0",
+    "react-icons": "^5.7.0",
+    "react-select": "^5.10.2",
+    "resend": "^6.16.0",
+    "sanity": "^6.12.0",
+    "select": "^1.1.2",
+    "zod": "^4.4.3"
+  },
+  "overrides": {
+    "js-yaml": "^4.1.0",
+    "smol-toml": "^1.6.1",
+    "uuid": "^11.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-google-recaptcha": "^2.1.9",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.10",
+    "typescript": "^5"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true,
+    "esbuild@0.28.2": true
+  }
+}

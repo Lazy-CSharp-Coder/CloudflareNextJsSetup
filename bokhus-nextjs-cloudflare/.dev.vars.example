@@ -1,0 +1,29 @@
+# .dev.vars — Local development secrets for Cloudflare Workers
+#
+# This file is the Workers equivalent of .env.local.
+# It is gitignored — DO NOT commit this file.
+# Copy this template to .dev.vars and fill in your real values.
+#
+# These values are used by `next dev` and `npm run preview` locally.
+# For production, set the same secrets via CLI (npx wrangler secret put)
+# or in the dashboard (Worker → Settings → Variables and Secrets).
+
+# Clerk (secret key — runtime only, not needed at build time)
+CLERK_SECRET_KEY=sk_test_xxxxxxxxxxxx
+
+# Resend (email API key — runtime only)
+RESEND_API_KEY=re_xxxxxxxxxxxx
+
+# Sanity (API token for authenticated queries — runtime only)
+# Only needed if you use authenticated Sanity queries, not the public CDN API
+SANITY_API_TOKEN=skxxxxxxxxxxxx
+
+# Google reCAPTCHA (secret key for server-side verification — runtime only)
+RECAPTCHA_SECRET_KEY=6Lexxxxxxxxxxxxxx
+
+# --- Public vars for local dev ---
+# These are in wrangler.jsonc "vars" for production, but for local dev
+# you may also want them here (or in your .env.local for next dev).
+# Clerk public key and redirect URL:
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_xxxxxxxxxxxx
+NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL=/Register
