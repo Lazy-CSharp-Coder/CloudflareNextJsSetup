@@ -295,3 +295,4 @@ npm run deploy
 - GitHub integration: https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/github-integration/
 - Wrangler configuration: https://developers.cloudflare.com/workers/wrangler/configuration/
 - KV documentation: https://developers.cloudflare.com/kv/
+
