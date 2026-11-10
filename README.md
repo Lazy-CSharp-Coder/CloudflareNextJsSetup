@@ -54,7 +54,7 @@ Complete setup guide for deploying this Next.js 16 app to Cloudflare Workers usi
 ## Step 2 — Create the KV namespace for caching
 
 ```bash
-npx wrangler kv namespace create NEXT_CACHE_WORKERS_KV
+|
 ```
 
 Copy the `id` from the output and paste it into `wrangler.jsonc`, replacing `REPLACE_WITH_YOUR_KV_NAMESPACE_ID`.
@@ -87,7 +87,7 @@ cp .dev.vars.example .dev.vars
 ```
 
 Fill in all the secret values in `.dev.vars`. This file is gitignored.
-
+<>
 ### For production — set secrets via CLI or dashboard
 
 ```bash
